@@ -52,6 +52,9 @@ end
 
 def invalid_command
   # code invalid_command here
+  puts "Wrong command. Please re-enter valid command."
+  prompt_user
+  get_user_input
 end
 
 #####################################################
@@ -66,5 +69,5 @@ def runner
     card_total = hit?(card_total)
     display_card_total(card_total)
   end
-  end_game(card_total) 
+  end_game(card_total)
 end
