@@ -30,15 +30,24 @@ end
 
 def initial_round
   # code #initial_round here
-  card_one = deal_card
-  card_two = deal_card
-  card_total = card_one + card_two
-  display_card_total(card_total)
+  card_one = deal_card  #first card
+  card_two = deal_card  #second card
+  card_total = card_one + card_two #sum of both cards
+  display_card_total(card_total) #total
   return card_total
 end
 
 def hit?
   # code hit? here
+  prompt_user  #get user input
+  user_input = get_user_input
+  if user_input == 'h'  #hit
+    card_total += deal_card #increase total w/ new dealing card number
+  elsif user_input == "s"  #stay
+    card_total #return the number. prompt user to hit again
+  else
+    invalid_command
+  end
 end
 
 def invalid_command
